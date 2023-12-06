@@ -5,11 +5,15 @@ Project Name:__Finance&Product Tracker__
 __Aim__
 The project was aimed at creating a database named finance & product tracker to help solve some challenging issues being experienced by the company
 
-__To provide insights into the total number of customers that patronizes the comapny__
-__To keep a tract record of company available products and quantity with prices__
-__to keep record of daily&weekly  sales and product quantity left whereby marking recommendations for needed product__ 
-__To analysize customer choiced product and relationship with age__
-__and also to reduce data redundacy while__ 
+1.__To provide insights into the total number of customers that patronizes the comapny.__
+
+2.__To keep a tract record of company available products and quantity with prices.__
+
+3.__to keep record of daily&weekly  sales and product quantity left whereby marking recommendations for needed product.__ 
+
+3.__To analysize customer choiced product and relationship with age.__
+
+4.__and also to reduce data redundacy while.__ 
 
 __Process__
 
