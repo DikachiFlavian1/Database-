@@ -1,0 +1,98 @@
+
+--create datbase finance_tracker
+
+-- Users table
+CREATE TABLE Users (
+    UserID SERIAL  PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Age INT,
+    Sex CHAR(1), -- Assuming 'M' for male, 'F' for female, or other appropriate values
+    UserName VARCHAR(255) NOT NULL);
+	
+
+CREATE TABLE Products (
+    ProductID SERIAL PRIMARY KEY,
+    ProductName VARCHAR(255) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    Quantity INT NOT NULL
+    -- Other product-related fields
+);select * from Users
+
+-- Transactions table
+CREATE TABLE Transactions (
+    TransactionID SERIAL PRIMARY KEY,
+    UserID INT,
+    ProductID INT,
+    Quantity INT NOT NULL,
+    TransactionDate DATE NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+    -- Other transaction-related fields
+);
+--DROP TABLE IF EXISTS Products
+
+-- Reports table
+CREATE TABLE Reports (
+    ReportID SERIAL PRIMARY KEY,
+    UserID INT,
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    TotalIncome DECIMAL(10, 2),
+    TotalExpenses DECIMAL(10, 2),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    -- Other report-related fields
+);
+
+
+--inserting values 
+-- Insert random values for the next 300 rows
+INSERT INTO Users (FirstName, LastName, Age, Sex, UserName)
+SELECT
+    'Kachi' || (i + 1),
+    'Flavian' || (i + 1),
+    (18 + (i % 20)),  -- Random age between 18 and 37
+    CASE WHEN i % 2 = 0 THEN 'M' ELSE 'F' END,  -- Alternating gender
+    'Kachi' || 'Flavian' || (i + 1) 
+FROM generate_series(1, 300) i;
+SELECT * FROM Users;
+-- Insert values into Products table
+--INSERT INTO Products (ProductName, Price, Quantity)
+--SELECT
+--    'IdealMats' || (i + 1),
+--    ROUND(RANDOM() * 100 + 1, 2),  -- Random price between 1 and 100
+ --   (i % 10 + 1) * 10  -- Quantity ranging from 10 to 100
+--FROM generate_series(1, 300) i;
+
+
+-- Insert values into Products table
+
+INSERT INTO Products (ProductName, Price, Quantity)
+SELECT
+    'IdealMats' || (i + 1),
+    CAST(RANDOM() * 100 + 1 AS NUMERIC(10, 2)),  
+    (i % 10 + 1) * 10  
+FROM generate_series(1, 850) i;
+select * from Products
+
+-- Insert values into Transactions table
+INSERT INTO Transactions (UserID, ProductID, Quantity, TransactionDate)
+SELECT
+    (i % 300) + 1,  -- Assigning random users to transactions
+    (i % 30) + 1,   -- Assigning random products to transactions
+    (i % 5 + 1) * 2,  -- Quantity ranging from 2 to 10
+    CURRENT_DATE - (i % 30)  -- Random transaction dates within the last 30 days
+FROM generate_series(1, 1000) i;
+select * from Transactions
+
+
+-- Insert values into Reports table
+INSERT INTO Reports (UserID, StartDate, EndDate, TotalIncome, TotalExpenses)
+SELECT
+    (i % 300) + 1,  -- Assigning random users to reports
+    CURRENT_DATE - (i % 30) - 30,  -- Random start date within the last 30 days
+    CURRENT_DATE - (i % 30),  -- Random end date within the last 30 days
+    CAST(RANDOM() * 1000 + 1 AS NUMERIC (10, 2)),  -- Random total income between 1 and 1000
+    CAST(RANDOM() * 500 + 1 AS NUMERIC (10, 2))  -- Random total expenses between 1 and 500
+FROM generate_series(1, 850) i;
+SELECT * FROM Reports
