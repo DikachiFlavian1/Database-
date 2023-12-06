@@ -13,7 +13,7 @@ The project was aimed at creating a database named finance & product tracker to 
 
 3.__To analysize customer choiced product and relationship with age.__
 
-4.__and also to reduce data redundacy while.__ 
+4.__and also to reduce data redundacy.__ 
 
 __Process__
 
