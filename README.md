@@ -5,7 +5,7 @@ Project Name:__Finance&Product Tracker__
 __Aim__
 The project was aimed at creating a database named finance & product tracker to help solve some challenging issues being experienced by the company
 
-1.__To provide insights into the total number of customers that patronizes the comapny.__
+1.__To provide insights into the total number of customers that patronizes the comapany.__
 
 2.__To keep a tract record of company available products and quantity with prices.__
 
@@ -100,6 +100,8 @@ SELECT
     CAST(RANDOM() * 1000 + 1 AS NUMERIC (10, 2)),  -- Random total income between 1 and 1000
     CAST(RANDOM() * 500 + 1 AS NUMERIC (10, 2))  -- Random total expenses between 1 and 500
 FROM generate_series(1, 850) i;
+
+__the visualization for this project will be done on google datastudio__
 
 check the tables files above to see the resultof the table and values creation 
 __IF YOU READ TO THIS PATH , ITS IMPORTANT THAT YOOU NOTE THAT THIS WAS A PROJECT I ASSIGNED MY SELF AND THE VALUES AND NAMES ARE FICTIONAL BUT  THE PROJECT GOAL REMAINS__
