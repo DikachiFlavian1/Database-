@@ -104,6 +104,7 @@ FROM generate_series(1, 850) i;
 __the visualization for this project will be done on google datastudio__
 To interact and view the visualization of this project [Click Here](https://lookerstudio.google.com/s/l6bJKCOqTT4)
 
+<img width="490" alt="finance image" src="https://github.com/DikachiFlavian1/Database-/assets/57820624/2d95e31f-acc5-4aa2-be78-c7a44cc25932">
 
 check the tables files above to see the resultof the table and values creation 
 __IF YOU READ TO THIS PATH , ITS IMPORTANT THAT YOOU NOTE THAT THIS WAS A PROJECT I ASSIGNED MY SELF AND THE VALUES AND NAMES ARE FICTIONAL BUT  THE PROJECT GOAL REMAINS__
