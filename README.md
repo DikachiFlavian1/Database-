@@ -1,4 +1,4 @@
- Projects you will find in this repository comprises of my data base knowledge ranging from creation of tables, inserting values into columns, Normalization, querying tables and if necessary updating columns and tables . 
+Contents you will find in this repository comprises of my data base knowledge ranging from creation of tables, inserting values into columns, Normalization, querying tables and if necessary updating columns and tables . 
  
 Project Name:__Finance&Product Tracker__
 --
@@ -102,6 +102,8 @@ SELECT
 FROM generate_series(1, 850) i;
 
 __the visualization for this project will be done on google datastudio__
+To interact and view the visualization of this project [Click Here](https://lookerstudio.google.com/s/l6bJKCOqTT4)
+
 
 check the tables files above to see the resultof the table and values creation 
 __IF YOU READ TO THIS PATH , ITS IMPORTANT THAT YOOU NOTE THAT THIS WAS A PROJECT I ASSIGNED MY SELF AND THE VALUES AND NAMES ARE FICTIONAL BUT  THE PROJECT GOAL REMAINS__
